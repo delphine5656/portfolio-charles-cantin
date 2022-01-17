@@ -37,17 +37,10 @@ export default function Navbar() {
                     <Link to='/about'>A propos</Link>
                     </li>
                     <li>
-                    <Link to='/portfolio'>Portfolio
-                    <ul className='dropdown'>
-                        <li><Link to='/Portrait'>Portrait</Link></li>
-                        <li><Link to='/Couple'>Couple</Link></li>
-                        <li><Link to='/Grossesse'>Grossesse</Link></li>
-                        <li><Link to='/Bebe'>Bébé</Link></li>
-                        <li><Link to='/Famille'>Famille</Link></li>
-                        <li><Link to='/Baptème'>Baptème</Link></li>
-                        <li><Link to='/Mariage'>Mariage</Link></li>
-                      </ul>
-                    </Link>
+                    <Link to='/portfolio'>Portfolio</Link>
+                    </li>
+                    <li>
+                    <Link to='/bebe'>Bebe</Link>
                     </li>
                     <li>
                     <Link to='/tarif'>Tarif</Link>

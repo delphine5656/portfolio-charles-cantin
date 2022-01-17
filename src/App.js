@@ -5,13 +5,7 @@ import About from './pages/about/About';
 import Portfolio from './pages/portfolio/Portfolio';
 import Tarif from './pages/tarif/Tarif';
 import Contact from './pages/contact/Contact';
-import Grossesse from './pages/portfolio/Grossesse'
-import Bapteme from './pages/portfolio/Bapteme'
-import Bebe from './pages/portfolio/Bebe'
-import Couple from './pages/portfolio/Couple'
-import Famille from './pages/portfolio/Famille'
-import Mariage from './pages/portfolio/Mariage'
-import Portrait from './pages/portfolio/Portrait'
+import Bebe from './Bebe';
 
 
 
@@ -30,15 +24,8 @@ function App() {
     <Routes basename={process.env.PUBLIC_URL}>
       <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
-      <Route path='/portfolio' element={<Portfolio/>}>
-        <Route path='/portfolio/Grossesse' element={<Grossesse/>}/>
-        <Route path='/portfolio/Bapteme' element={<Bapteme/>}/>
-        <Route path='/portfolio/Bebe' element={<Bebe/>}/>
-        <Route path='/portfolio/Couple' element={<Couple/>}/>
-        <Route path='/portfolio/Famille' element={<Famille/>}/>
-        <Route path='/portfolio/Mariage' element={<Mariage/>}/>
-        <Route path='/portfolio/Portrait' element={<Portrait/>}/>
-      </Route>
+      <Route path='/portfolio' element={<Portfolio/>}/>
+      <Route path='/bebe' element = {<Bebe/>}/>
       <Route path='/tarif' element={<Tarif/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/connexion' element={<Connexion/>}/>
