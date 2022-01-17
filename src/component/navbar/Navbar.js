@@ -38,7 +38,7 @@ export default function Navbar() {
                     </li>
                     <li>
                     <Link to='/portfolio'>Portfolio
-                    <ul className='links'>
+                    <ul className='dropdown'>
                         <li><Link to='/Portrait'>Portrait</Link></li>
                         <li><Link to='/Couple'>Couple</Link></li>
                         <li><Link to='/Grossesse'>Grossesse</Link></li>
