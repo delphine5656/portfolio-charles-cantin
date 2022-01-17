@@ -1,0 +1,33 @@
+.home{
+    width: 100vw;
+    height:90vh;
+    position: relative;
+}
+.homeBlack{
+   width: 100vw;
+   height: 90vh;
+   object-fit: cover;
+   object-position: left bottom;
+
+}
+
+.containHome{
+    position: absolute;
+    z-index: 100;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left:50%;
+
+}
+
+.spanTitre{
+    font-size: 5rem;
+}
+
+@media screen and (max-width: 767px) {
+    .spanTitre{
+        font-size: 4rem;
+    }
+   
+  }

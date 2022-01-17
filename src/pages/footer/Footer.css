@@ -1,0 +1,20 @@
+.footer{
+    background-color: var(--button-Backgroungcolor-47555e);
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer p {
+    color: var(--clr-white);
+}
+
+.footer h3 {
+    color: var( --clr-grey-5);
+}
+
+
+.social-icons {
+    display: flex;
+  }

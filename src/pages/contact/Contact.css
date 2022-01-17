@@ -1,0 +1,83 @@
+.mainContact{
+    display: grid;
+    grid-template-columns: 40vw 40vw 20vw;
+    justify-content:space-between;
+    justify-items: center;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    background-image: url('../../images/nature.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    padding: 2rem;
+}
+
+
+.mainConnexion{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border: 2px solid var( --button-Backgroungcolor-47555e);
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--dark-shadow); 
+    text-align: center;
+}
+
+.coordonnee{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border-radius: var(--radius);
+    border: 2px solid var( --button-Backgroungcolor-47555e);
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--dark-shadow);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.aside{
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.champs{
+    display: flex;
+    flex-direction:column;
+}
+
+input{
+    margin-bottom: 1rem;
+}
+
+.coordonnee p{
+    text-align: justify;
+}
+p{
+    text-align: center;
+}
+
+textarea{
+width:'350px';
+height:'350px'
+}
+
+@media screen and (max-width: 770px){
+    .mainContact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        
+    }
+
+    .mainConnexion{
+        width: 100vw;
+        padding: 0.1rem;
+        margin: 1rem;
+        border:none;
+    }
+    textarea{
+        width:'290px';
+        height:'350px'
+        }
+    
+}
