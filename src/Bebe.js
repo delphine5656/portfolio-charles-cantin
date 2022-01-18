@@ -2,6 +2,7 @@ import React from 'react'
 import Aside from './component/aside/Aside'
 import CardPhoto from './component/CardPhoto'
 import Nourrisson from './images/jade.jpg'
+import './pages/portfolio/Portfolio.css'
 function Bebe() {
   
     return (
@@ -10,7 +11,6 @@ function Bebe() {
             <p>Voici les photos du shooting bébé fait avec passion et amour</p>
             <main className='container'>
             <section className='grid-images'>
-                <section className='photos'>
                   <div className='photos-center'>
                   <CardPhoto
                     image={Nourrisson}
@@ -45,7 +45,6 @@ function Bebe() {
                   
                   />    
                   </div>
-                </section>
             </section>
             <div className='aside'>
                   <Aside/>

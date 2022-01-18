@@ -1,106 +1,155 @@
-import React, { useState, useEffect } from 'react'
-import { FaSearch } from 'react-icons/fa'
-import Photo from '../.././component/gallery/Photo';
+import React, {useState, useEffect, useRef} from 'react'
+import {v4 as uuidv4} from 'uuid'
 import Aside from '../../component/aside/Aside';
 
-import './Portfolio.css'
+import './Scroll.css'
 
 const clientID = `?client_id=${process.env.REACT_APP_ACCESS_KEY}`
-const mainUrl = `https://api.unsplash.com/photos/`
-const searchUrl = `https://api.unsplash.com/search/photos/`
 
 
 function Portfolio() {
-    const[loading, setLoading] = useState(false);
-    const[photos, setPhotos] = useState([]);
-    const[page, setPage]= useState(0);
-    const [query, setQuery] = useState('');
 
+    const [dataImg, setDataImg] = useState([[], [], []])
+    const [pageIndex, setPageIndex] = useState(1)
+    const [searchState, setSearchState] = useState('random')
+    const [firstCall, setFirstCall] = useState(true)
+    
+    const infiniteFetchData = () => {
 
+        fetch(`https://api.unsplash.com/search/photos?page=${pageIndex}&per_page=30&query=${searchState}&client_id=qC6gLqoRwZzT4r3vuiFUx_Iv55H-qSsmEgSRFv4n9WA`).then((response) => {
+            return response.json()
+        })
+        .then((data) => {
 
-    const fetchImages = async() =>{
-        setLoading(true);
-        let url;
-        const urlPage= `&page=${page}`
-        const urlQuery = `&query=${query}`
+            const imgsReceived = [];
 
-        if(query){
-            url = `${searchUrl}${clientID}${urlPage}${urlQuery}`
-        }else{
-            url = `${mainUrl}${clientID}${urlPage}`
-        }
-       
-        try{
-          const response = await fetch(url);
-          const data = await response.json();
-          setPhotos((oldPhotos)=>{
-              if(query && page === 1){
-                return data.results
-              }
-              else if(query){
-                return [...oldPhotos, ...data.results]
-              }else{
-                return [...oldPhotos, ...data]
-              }
-            
-          });
-          setLoading(false);
-        }catch(error){
-            setLoading(false);
-          console.log(error);
-        }
+            data.results.forEach((img) => {
+                imgsReceived.push(img.urls.regular)
+            })
+
+            const newFreshState = [
+                [...dataImg[0]],
+                [...dataImg[1]],
+                [...dataImg[2]],
+            ]
+
+            let index = 0;
+            for(let i = 0; i < 3; i++){
+                for(let j = 0; j < 10; j++){
+                    newFreshState[i].push(imgsReceived[index])
+                    index++;
+                }
+            }
+
+            setDataImg(newFreshState)
+            setFirstCall(false)
+        })
+
     }
 
-     const handleSubmit = (e)=>{
-        e.preventDefault();
-        setPage(1);
-     }   
+    const searchFetchData = () => {
 
+        fetch(`https://api.unsplash.com/search/photos?page=${pageIndex}&per_page=30&query=${searchState}&client_id=qC6gLqoRwZzT4r3vuiFUx_Iv55H-qSsmEgSRFv4n9WA`).then((response) => {
+            return response.json()
+        })
+        .then((data) => {
 
-    useEffect(()=>{
-      fetchImages();  
-    },[page])
+            const imgsReceived = [];
 
-    // scroll event
-    useEffect(()=>{
-        const event = window.addEventListener('scroll',()=> {
-            if(!loading && window.innerHeight + window.scrollY >= document.body.scrollHeight - 2){
-                setPage((oldPage)=>{
-                    return oldPage + 1
-                })
+            data.results.forEach((img) => {
+                imgsReceived.push(img.urls.regular)
+            })
+
+            const newFreshState = [
+                [],
+                [],
+                [],
+            ]
+
+            let index = 0;
+            for(let i = 0; i < 3; i++){
+                for(let j = 0; j < 10; j++){
+                    newFreshState[i].push(imgsReceived[index])
+                    index++;
+                }
             }
-        });
-        return () => window.removeEventListener('scroll', event)
-    },[])
+
+            setDataImg(newFreshState)
+
+        })
+
+    }
+
+    useEffect(() => {
+        if(firstCall) return;
+        searchFetchData()
+    },[searchState])
+
+    useEffect(() => {
+
+        infiniteFetchData();
+
+    }, [pageIndex])
+
+
+
+    const handleSearch = e => {
+        e.preventDefault()
+
+        setSearchState(inpRef.current.value)
+        setPageIndex(1)
+    }
+    
+    const inpRef = useRef()
+
+
+    useEffect(() => {
+        window.addEventListener('scroll', infiniteCheck);
+        
+        return () => {
+            window.removeEventListener('scroll', infiniteCheck)
+        }
+    }, [])
+
+    const infiniteCheck = () => {
+ 
+        const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
+
+        if(scrollHeight - scrollTop === clientHeight) {
+            setPageIndex(pageIndex => pageIndex + 1)
+        }
+
+    }
+
+
     return (
     <>
+        <h1>Mon portfolio</h1>
         <main className='container'>
             <section className='grid-images'>
-            <section className='search'>
-                <form className='search-form'>
-                    <input 
-                    type="text" 
-                    placeholder='rechercher' 
-                    className='form-input' 
-                    value={query} 
-                    onChange={(e)=>{
-                        setQuery(e.target.value)
-                    }}/>
-                    <button type='submit' className='submit-btn' onClick={handleSubmit}>
-                        <FaSearch/>
-                    </button>
-                </form> 
-            </section> 
-
-            <section className='photos'>
-                <div className='photos-center'> 
-                    {photos.map((image,index)=>{
-                        
-                        return <Photo key={image.index} {...image} />
+            <div className="conteneur">
+            <form onSubmit={handleSearch}>
+                <label htmlFor="search">Votre recherche</label>
+                <input type="text" id="search" ref={inpRef} />
+            </form>
+            <div className="card-list">
+                <div>
+                    {dataImg[0].map(img => {
+                        return <img key={uuidv4()} src={img} alt='image unsplash' />
                     })}
                 </div>
-                {loading && <h2 className='loading'>Loading...</h2>}
-            </section>
+                <div>
+                    {dataImg[1].map(img => {
+                        return <img key={uuidv4()} src={img} alt='image unsplash' />
+                    })}
+                </div>
+                <div>
+                    {dataImg[2].map(img => {
+                        return <img key={uuidv4()} src={img} alt='image unsplash' />
+                    })}
+                </div>
+            </div>
+        </div>
             </section>
         
             <div className='aside'>

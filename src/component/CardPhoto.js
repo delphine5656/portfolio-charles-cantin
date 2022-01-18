@@ -6,11 +6,11 @@ function CardPhoto(props) {
      //création du state chargement
        
          // creation du state pour les posts
-         const [posts, setPosts] = useState([]);
-     
+     const [post, setPost] = useState([])
+
          //appel dela fonction useEffect pour faire appel à l'api de strapi
          useEffect(()=>{
-          fetch('http://localhost:1337/api/bebes',
+          fetch('http://localhost:1337/api/posts',
           {
               method: "GET",
               headers: {
@@ -19,7 +19,13 @@ function CardPhoto(props) {
           }) 
           
           .then(res => res.json())
-          .then(json => setPosts(JSON.stringify(json)))
+          .then(data => { 
+            data.map(post => 
+                  <h4>{post.data}</h4>
+              )
+            
+          }
+            )
             .catch(error => console.log(error));
          },[])
     return (
@@ -28,8 +34,8 @@ function CardPhoto(props) {
             <div className='photos-center'> 
                 <img src={props.image} alt='photo de charles cantin'/>
                 <div className='photo-info'>
-                    <h4>{posts}</h4>
-                    <h4 >{posts.titre}</h4>
+                    <h4>{post}</h4>
+                    <h4 >{props.description}</h4>
                 </div>
 
             </div>
