@@ -1,7 +1,4 @@
-  .photos {
-    padding: 5rem 0;
-    display: flex;
-  }
+  
   .photos-center {
     margin: 0 auto;
     display: grid;
@@ -16,8 +13,8 @@
     display: block;
     object-fit: cover;
   }
-  .photo h4 {
-    margin-bottom: 0.5rem;
+  .photo-info h4 {
+    margin-bottom: 5px;
   }
 
   .user-img {
@@ -36,8 +33,9 @@
     transform: translateY(100%);
     transition: var(--transition);
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+   
   }
   .photo:hover .photo-info {
     transform: translateY(0);

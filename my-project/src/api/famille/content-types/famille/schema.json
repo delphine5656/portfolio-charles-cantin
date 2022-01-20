@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "bebes",
+  "collectionName": "familles",
   "info": {
-    "singularName": "bebe",
-    "pluralName": "bebes",
-    "displayName": "bebes",
-    "description": ""
+    "singularName": "famille",
+    "pluralName": "familles",
+    "displayName": "famille"
   },
   "options": {
     "draftAndPublish": true
@@ -16,17 +15,16 @@
       "type": "string"
     },
     "description": {
-      "type": "richtext"
+      "type": "text"
     },
     "photos": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ]
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
