@@ -1,0 +1,22 @@
+---
+label: fammille
+hide_body: false
+fields:
+- name: content
+  type: text
+  config:
+    required: false
+  label: content
+  description: soeuretteis
+- name: title
+  type: text
+  config:
+    required: false
+  label: title
+  description: si
+- name: photos
+  type: file
+  config:
+    maxSize: 64
+  label: photos
+  description: techniquegao
