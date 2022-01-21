@@ -31,7 +31,6 @@ function Bebe() {
                       <p>{item.data.attributes.titre}</p>
                     </li>
                   ))}</ul> */}
-                <p>{posts.data[0].attributes.titre}</p>
             <main className='container'>
             <section className='grid-images'>
             <div className='photos-center'>

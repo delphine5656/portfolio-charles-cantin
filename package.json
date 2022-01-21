@@ -115,5 +115,12 @@
     
   ]
   
+  },
+  
+  "devDependencies": {
+  
+    
+  "@netlify/plugin-gatsby": "^1.0.3"
+  
   }
 }
