@@ -2,7 +2,7 @@ const path = require("path")
 const fs = require("fs")
 
 const dirPathCouple = path.join(__dirname, "../couple")
-const dirPathPagesCouple = path.join(__dirname, "../src/pages/content")
+
 
 
 
@@ -103,22 +103,22 @@ const getPosts = () => {
     return 
 }
 
-const getPages = () => {
-    fs.readdir(dirPathPagesCouple, (err, files) => {
-        if (err) {
-            return console.log("Failed to list contents of directory: " + err)
-        }
-        files.forEach((file, i) => {
-            let page
-            fs.readFile(`${dirPathPagesCouple}/${file}`, "utf8", (err, contents) => { 
-                page = {
-                    content: contents
-                }
-                pagelist.push(page)
-                let data = JSON.stringify(pagelist)
-                fs.writeFileSync("src/pages.json", data)
-            })
-        })
+// const getPages = () => {
+//     fs.readdir(dirPathPagesCouple, (err, files) => {
+//         if (err) {
+//             return console.log("Failed to list contents of directory: " + err)
+//         }
+//         files.forEach((file, i) => {
+//             let page
+//             fs.readFile(`${dirPathPagesCouple}/${file}`, "utf8", (err, contents) => { 
+//                 page = {
+//                     content: contents
+//                 }
+//                 pagelist.push(page)
+//                 let data = JSON.stringify(pagelist)
+//                 fs.writeFileSync("src/pages.json", data)
+//             })
+//         })
     })
     return 
 }
