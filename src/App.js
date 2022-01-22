@@ -14,6 +14,7 @@ import Family from './pages/categorie/Family';
 import Example from './Example';
 import Post from './pages/Post'
 import NotFound from "./pages/notfound"
+import Couple from './pages/categorie/Couple';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Route path='/portfolio' element={<Portfolio/>}/>
       <Route path='/bebe' element = {<Bebe/>}/>
       <Route path='/famille' element = {<Family/>}/>
+      <Route path='/couple' element = {<Couple/>}/>
       <Route path='/tarif' element={<Tarif/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/connexion' element={<Connexion/>}/>

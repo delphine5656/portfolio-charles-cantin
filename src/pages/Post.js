@@ -27,7 +27,7 @@ const Post = (props) => {
     }
     return (
         <Layout>
-            <div className="post">
+            <div >
                 <h2>{fetchedPost.title}</h2>
                 <small>Published on {fetchedPost.date} by {fetchedPost.author}</small>
                 <hr/>

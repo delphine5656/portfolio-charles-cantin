@@ -10,7 +10,7 @@ const PostList = () => {
     })
     return (
         <div className="postlist">
-            <h1 className="title">All Posts</h1>
+            <h1 className="title">Portfolio Bébé</h1>
             {postlist.length && 
                 postlist.map((post, i) => {
                     return (
@@ -18,8 +18,9 @@ const PostList = () => {
                              <div className="img-container">
                                 {post.thumbnail && <img className="thumbnail" width={80} src={post.thumbnail} alt=""/> }
                                 <h2><Link className="link" to={`/post/${post.id}`}>{post.title}</Link></h2>
+                                <h4>{post.content}</h4>
                             </div>
-                            <small>Published on {post.date} by {post.author}</small>
+                            <small>Published on {post.date}</small>
                             <Markdown source={excerptList[i]} escapeHtml={false} />
                             <small><Link className="link" to={`/post/${post.id}`}>Read more</Link></small>
                         </div>

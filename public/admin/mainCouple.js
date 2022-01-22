@@ -1,8 +1,8 @@
 const path = require("path")
 const fs = require("fs")
 
-const dirPath = path.join(__dirname, "../posts")
-const dirPathPages = path.join(__dirname, "../src/pages/content")
+const dirPathCouple = path.join(__dirname, "../couple")
+const dirPathPagesCouple = path.join(__dirname, "../src/pages/content")
 
 
 
@@ -40,7 +40,7 @@ const formatDate = (date) => {
   
 
 const getPosts = () => {
-    fs.readdir(dirPath, (err, files) => {
+    fs.readdir(dirPathCouple, (err, files) => {
         if (err) {
             return console.log("Failed to list contents of directory: " + err)
         }
@@ -48,7 +48,7 @@ const getPosts = () => {
         files.forEach((file, i) => {
             let obj = {}
             let post
-            fs.readFile(`${dirPath}/${file}`, "utf8", (err, contents) => {
+            fs.readFile(`${dirPathCouple}/${file}`, "utf8", (err, contents) => {
                 const getMetadataIndices = (acc, elem, i) => {
                     if (/^---/.test(elem)) {
                         acc.push(i)
@@ -104,13 +104,13 @@ const getPosts = () => {
 }
 
 const getPages = () => {
-    fs.readdir(dirPathPages, (err, files) => {
+    fs.readdir(dirPathPagesCouple, (err, files) => {
         if (err) {
             return console.log("Failed to list contents of directory: " + err)
         }
         files.forEach((file, i) => {
             let page
-            fs.readFile(`${dirPathPages}/${file}`, "utf8", (err, contents) => { 
+            fs.readFile(`${dirPathPagesCouple}/${file}`, "utf8", (err, contents) => { 
                 page = {
                     content: contents
                 }

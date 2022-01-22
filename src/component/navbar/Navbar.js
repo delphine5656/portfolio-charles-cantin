@@ -46,6 +46,9 @@ export default function Navbar() {
                     <Link to='/tarif'>Tarif</Link>
                     </li>
                     <li>
+                    <Link to='/couple'>couple</Link>
+                    </li>
+                    <li>
                     <Link to='/contact'>Contact</Link>
                     </li>
                 </ul>
