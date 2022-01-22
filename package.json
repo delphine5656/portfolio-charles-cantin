@@ -3,9 +3,7 @@
   "name": "portfolio-charles",
   
   "version": "0.1.0",
-  
-  "private": true,
-  
+  "homepage": "https://portfolio-cantin.netlify.app/",
   "dependencies": {
   
     
