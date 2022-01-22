@@ -46,7 +46,7 @@ export default function Navbar() {
                     <Link to='/tarif'>Tarif</Link>
                     </li>
                     <li>
-                    <Link to='/famille'>couple</Link>
+                    <Link to='/famille'>famille</Link>
                     </li>
                     <li>
                     <Link to='/contact'>Contact</Link>
