@@ -1,11 +1,11 @@
 import React from "react"
-
+import "./component.css"
 
 const Layout = ({children}) => {
     return (
-        <div>
+        <div className="layout">
             
-            <div>
+            <div className="layout-body">
                 <div>{children}</div>
             
             </div>

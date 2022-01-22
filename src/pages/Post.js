@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom"
 import Markdown from "react-markdown"
 import Layout from "../component/layout"
 import postlist from "../posts.json"
+import "../pages/categorie/pages.css"
 
 
 const Post = (props) => {
@@ -26,7 +27,7 @@ const Post = (props) => {
     }
     return (
         <Layout>
-            <div>
+            <div className="post">
                 <h2>{fetchedPost.title}</h2>
                 <small>Published on {fetchedPost.date} by {fetchedPost.author}</small>
                 <hr/>
