@@ -1,7 +1,7 @@
 const path = require("path")
 const fs = require("fs")
 
-const dirPathCouple = path.join(__dirname, "../couple")
+const dirPathCouple = path.join(__dirname, "../famille")
 
 
 
