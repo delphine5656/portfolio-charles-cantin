@@ -1,6 +1,6 @@
 import React  from 'react'
-import Aside from '../../component/aside/Aside'
-import Bebe from '../../images/bebe.jpg'
+import Layout from '../../component/Layout'
+import PostList from '../../component/PostList'
 
 //avoir toutes les données de l'api depuis la version 4 de strapi
 //http://localhost:1337/api/bebes?populate=*
@@ -12,41 +12,9 @@ function Baby() {
   
     return (
             <>
-            <h1>Shooting bébé</h1>
-            <p>Voici les photos du shooting bébé fait avec passion et amour</p>
-            <main className='container'>
-            <section className='grid-images'>
-            <div className='photos-center'>
-              <div>
-                <article className='photo'>
-                <div className='photos-center'>
-               <img src={Bebe} alt="bebe"/>
-                <div className='photo-info'>
-                  <h4>jade</h4>
-                  <p>Contenu</p>
-                  </div> 
-                </div>
-                </article>    
-              </div>
-            </div>
-            <div className='photos-center'>
-              <div>
-                <article className='photo'>
-                <div className='photos-center'>
-               <img src={Bebe} alt="bebe"/>
-                <div className='photo-info'>
-                  <h4>jade</h4>
-                  <p>Contenu</p>
-                  </div> 
-                </div>
-                </article>    
-              </div>
-            </div>
-            </section>
-            <div className='aside'>
-                  <Aside/>
-            </div>
-            </main>
+           <Layout>
+            <PostList />
+          </Layout>
             </>
 
       
