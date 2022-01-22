@@ -5,15 +5,13 @@ import About from './pages/about/About';
 import Portfolio from './pages/portfolio/Portfolio';
 import Tarif from './pages/tarif/Tarif';
 import Contact from './pages/contact/Contact';
-import Bebe from './Bebe';
-
-
-
-
+import Bebe from './pages/categorie/Bebe';
 import './App.css';
 import Navbar from './component/navbar/Navbar';
 import Footer from './pages/footer/Footer';
 import Connexion from './pages/connexion/Connexion';
+import Family from './pages/categorie/Family';
+import Example from './Example';
 
 
 function App() {
@@ -26,9 +24,11 @@ function App() {
       <Route path='/about' element={<About/>}/>
       <Route path='/portfolio' element={<Portfolio/>}/>
       <Route path='/bebe' element = {<Bebe/>}/>
+      <Route path='/famille' element = {<Family/>}/>
       <Route path='/tarif' element={<Tarif/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/connexion' element={<Connexion/>}/>
+      <Route path='/example' element={<Example/>}/>
       
     </Routes>
     <Footer/>

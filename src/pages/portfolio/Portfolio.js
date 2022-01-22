@@ -4,7 +4,7 @@ import Aside from '../../component/aside/Aside';
 
 import './Scroll.css'
 
-const clientID = `?client_id=${process.env.REACT_APP_ACCESS_KEY}`
+//const clientID = `?client_id=${process.env.REACT_APP_ACCESS_KEY}`
 
 
 function Portfolio() {

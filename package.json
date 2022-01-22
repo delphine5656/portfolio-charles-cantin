@@ -24,6 +24,9 @@
   "gatsby-cli": "^4.5.2",
   
     
+  "markdown-to-jsx": "^7.1.6",
+  
+    
   "react": "^17.0.2",
   
     
@@ -31,6 +34,9 @@
   
     
   "react-icons": "^4.3.1",
+  
+    
+  "react-markdown": "^8.0.0",
   
     
   "react-router-dom": "^6.2.1",
@@ -55,7 +61,8 @@
   "test": "react-scripts test",
   
     
-  "eject": "react-scripts eject"
+  "eject": "react-scripts eject",
+  "server" :"node public/main.js"
   
   },
   
