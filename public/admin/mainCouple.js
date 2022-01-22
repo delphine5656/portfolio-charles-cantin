@@ -119,9 +119,9 @@ const getPosts = () => {
 //                 fs.writeFileSync("src/pages.json", data)
 //             })
 //         })
-    })
-    return 
-}
+//     })
+//     return 
+// }
 
 getPosts()
-getPages()
+//getPages()
