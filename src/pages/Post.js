@@ -1,15 +1,15 @@
 import React from "react"
-import { Redirect } from "react-router-dom"
 import Markdown from "react-markdown"
-import Layout from "../component/layout"
+import Layout from "../component/Layout"
 import postlist from "../posts.json"
 import "../pages/categorie/pages.css"
+import { Link } from "react-router-dom"
 
 
 const Post = (props) => {
     const validId = parseInt(props.match.params.id)
     if (!validId) {
-        return <Redirect to="/404" />
+        return <Link to="/404" />
     }
     const fetchedPost = {}
     let postExists = false
@@ -23,7 +23,7 @@ const Post = (props) => {
         }
     })
     if (postExists === false) {
-        return <Redirect to="/404" />
+        return <Link to="/404" />
     }
     return (
         <Layout>

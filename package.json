@@ -3,7 +3,9 @@
   "name": "portfolio-charles",
   
   "version": "0.1.0",
+  
   "homepage": "https://portfolio-cantin.netlify.app/",
+  
   "dependencies": {
   
     
@@ -60,7 +62,9 @@
   
     
   "eject": "react-scripts eject",
-  "server" :"node public/main.js"
+  
+    
+  "server": "node public/main.js"
   
   },
   

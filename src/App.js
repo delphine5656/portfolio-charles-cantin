@@ -12,6 +12,8 @@ import Footer from './pages/footer/Footer';
 import Connexion from './pages/connexion/Connexion';
 import Family from './pages/categorie/Family';
 import Example from './Example';
+import Post from './pages/Post'
+import NotFound from "./pages/notfound"
 
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/connexion' element={<Connexion/>}/>
       <Route path='/example' element={<Example/>}/>
+      <Route path="/post/:id" element={props => <Post {...props} />} />
+      <Route path="/404" component={<NotFound/>} />
       
     </Routes>
     <Footer/>
