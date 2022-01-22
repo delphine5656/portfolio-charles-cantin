@@ -7,7 +7,7 @@ const dirPathCouple = path.join(__dirname, "../couple")
 
 
 let postlist = []
-let pagelist = []
+//let pagelist = []
 
 const months = {
     "01": "January",
