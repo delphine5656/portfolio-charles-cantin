@@ -1,7 +1,6 @@
 import React  from 'react'
 import Layout from '../../component/Layout'
-import PostList from '../../component/PostList'
-import './pages.css'
+import Post from '../../component/PostList'
 
 export default function Family() {
     
@@ -11,7 +10,7 @@ export default function Family() {
 
 <div>
         <Layout>
-            <PostList />
+            <Post />
         </Layout>
     </div>
   </div>;

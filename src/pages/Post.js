@@ -2,7 +2,6 @@ import React from "react"
 import Markdown from "react-markdown"
 import Layout from "../component/Layout"
 import postlist from "../posts.json"
-import "../pages/categorie/pages.css"
 import { Link } from "react-router-dom"
 
 

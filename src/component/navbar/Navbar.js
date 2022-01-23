@@ -66,7 +66,7 @@ export default function Navbar() {
             );
           })}
         </ul>
-            <button><Link to='/connexion'>Se connecter</Link></button>
+            <button><a href='https://portfolio-cantin.netlify.app/admin/#/'>Se connecter</a></button>
      </nav>
     )
 }
